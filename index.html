@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para vos</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0f0f14;
+            color: #f2f2f2;
+            font-family: 'Georgia', serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 16px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            text-align: center;
+            animation: fadeIn 2s ease;
+        }
+
+        /* TEXTOS */
+        .texto-container {
+            opacity: 1;
+            transition: opacity 2s ease, max-height 2s ease, margin 2s ease;
+            max-height: 1000px;
+            overflow: hidden;
+        }
+
+        .texto-container.ocultar {
+            opacity: 0;
+            max-height: 0;
+            margin-bottom: 0;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            opacity: 0;
+            animation: reveal 1.5s forwards;
+            margin-bottom: 28px;
+        }
+
+        /* SLIDER */
+        .slider {
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 1 / 1;
+            position: relative;
+            overflow: hidden;
+            border-radius: 14px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 2s ease, transform 2s ease;
+            display: none;
+            margin: 0 auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            background: #0f0f14;
+            margin-top: 168px;
+            /* probá -40, -60, -100 */
+
+        }
+
+        .slider.visible {
+            opacity: 1;
+            transform: translateY(0);
+            display: block;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            opacity: 0;
+            transition: opacity 2s ease;
+            background: #0f0f14;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        /* ANIMACIONES */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes reveal {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* 📱 RESPONSIVE */
+        @media (max-width: 768px) {
+            .card {
+                padding: 24px 16px;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 1.7;
+                margin-bottom: 22px;
+            }
+
+            .slider {
+                max-width: 90vw;
+            }
+        }
+
+        @media (max-width: 480px) {
+            p {
+                font-size: 15px;
+            }
+
+            .slider {
+                border-radius: 12px;
+            }
+
+            .slider {
+                margin-top: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="texto-container" id="textos">
+            <p style="animation-delay:0.5s">
+                Mi flaquita 💕, cuán agradecido estoy por tu amor
+            </p>
+
+            <p style="animation-delay:2.5s">
+                Cómo me haces feliz mujer,<br>
+                amo cada detalle tuyo que me brindas
+            </p>
+
+            <p style="animation-delay:4.5s">
+                Sí, me refiero a tu paciencia,<br>
+                a tu tiempo, a tu entrega mi niña preciosa,
+            </p>
+
+            <p style="animation-delay:6.5s">
+                Amo cada momento que compartimos juntos
+            </p>
+
+            <p style="animation-delay:8.5s">
+                Cada dia sigo eligiéndote,<br>
+                porque eres tú la mujer con la cual deseo pasar el resto de mi vida
+            </p>
+
+            <p style="animation-delay:10.5s">
+                Prometo que aunque fallemos,<br>
+                siempre con la ayuda de Papá nos levantaremos<br>
+                porque tenemos un futuro que nos espera ❤️
+            </p>
+
+            <p style="animation-delay:13s">
+                Te quiero, te amo mucho mi niña ❤️
+            </p>
+
+            <p style="animation-delay:15s">
+                Felices 9 meses junticos.
+            </p>
+
+        </div>
+
+        <div class="slider" id="slider">
+            <img src="img/1.jpeg" class="slide active">
+            <img src="img/2.jpeg" class="slide">
+            <img src="img/3.jpeg" class="slide">
+            <img src="img/4.jpeg" class="slide">
+            <img src="img/5.jpeg" class="slide">
+            <img src="img/6.jpeg" class="slide">
+            <img src="img/7.jpeg" class="slide">
+            <img src="img/8.jpeg" class="slide">
+            <img src="img/9.jpeg" class="slide">
+            <img src="img/10.jpeg" class="slide">
+            <img src="img/11.jpeg" class="slide">
+            <img src="img/12.jpeg" class="slide">
+            <img src="img/13.jpeg" class="slide">
+            <img src="img/14.jpeg" class="slide">
+            <img src="img/15.jpeg" class="slide">
+            <img src="img/16.jpeg" class="slide">
+            <img src="img/17.jpeg" class="slide">
+            <img src="img/18.jpeg" class="slide">
+            <img src="img/19.jpeg" class="slide">
+            <img src="img/20.jpeg" class="slide">
+            <img src="img/21.jpeg" class="slide">
+            <img src="img/22.jpeg" class="slide">
+            <img src="img/23.jpeg" class="slide">
+            <img src="img/24.jpeg" class="slide">
+            <img src="img/25.jpeg" class="slide">
+            <img src="img/26.jpeg" class="slide">
+            <img src="img/27.jpeg" class="slide">
+            <img src="img/28.jpeg" class="slide">
+            <img src="img/29.jpeg" class="slide">
+            <img src="img/30.jpeg" class="slide">
+            <img src="img/31.jpeg" class="slide">
+            <img src="img/32.jpeg" class="slide">
+            <img src="img/33.jpeg" class="slide">
+            <img src="img/34.jpeg" class="slide">
+            <img src="img/35.jpeg" class="slide">
+            <img src="img/36.jpeg" class="slide">
+            <img src="img/37.jpeg" class="slide">
+            <img src="img/38.jpeg" class="slide">
+            <img src="img/39.jpeg" class="slide">
+            <img src="img/40.jpeg" class="slide">
+            <img src="img/41.jpeg" class="slide">
+        </div>
+    </div>
+
+    <audio id="musica" loop>
+        <source src="audio/Te Ensenaré a Olvidar_spotdown.org.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <script>
+        window.onload = function () {
+            const musica = document.getElementById("musica");
+            musica.volume = 0.15; // bajito, romántico
+            musica.play().then(() => {
+                subirVolumen(musica);
+            }).catch(() => {
+                document.body.addEventListener("click", () => {
+                    musica.play();
+                    subirVolumen(musica);
+                }, { once: true });
+            });
+            setTimeout(() => {
+                document.getElementById("textos").classList.add("ocultar");
+
+                setTimeout(() => {
+                    const slider = document.getElementById("slider");
+                    slider.classList.add("visible");
+                    iniciarSlider();
+                }, 2000);
+
+            }, 18000);
+        }
+
+        function iniciarSlider() {
+            let index = 0;
+            const slides = document.querySelectorAll('.slide');
+
+            setTimeout(() => {
+                setInterval(() => {
+                    slides[index].classList.remove('active');
+                    index = (index + 1) % slides.length;
+                    slides[index].classList.add('active');
+                }, 4500);
+            }, 3000);
+        }
+
+        function subirVolumen(audio) {
+            let vol = 0;
+            const fade = setInterval(() => {
+                if (vol < 0.35) {
+                    vol += 0.02;
+                    audio.volume = vol;
+                } else {
+                    clearInterval(fade);
+                }
+            }, 300);
+        }
+    </script>
+
+
+</body>
+
+</html>
