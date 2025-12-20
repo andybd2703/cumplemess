@@ -242,54 +242,45 @@
 
 
     <script>
-        window.onload = function () {
-            const musica = document.getElementById("musica");
-            musica.volume = 0.15; // bajito, romántico
-            musica.play().then(() => {
-                subirVolumen(musica);
-            }).catch(() => {
-                document.body.addEventListener("click", () => {
-                    musica.play();
-                    subirVolumen(musica);
-                }, { once: true });
-            });
-            setTimeout(() => {
-                document.getElementById("textos").classList.add("ocultar");
+    const musica = document.getElementById("musica");
+    musica.volume = 0.15;
 
-                setTimeout(() => {
-                    const slider = document.getElementById("slider");
-                    slider.classList.add("visible");
-                    iniciarSlider();
-                }, 2000);
+    function iniciarMusica() {
+        musica.play().catch(() => {});
+        document.removeEventListener("click", iniciarMusica);
+        document.removeEventListener("touchstart", iniciarMusica);
+    }
 
-            }, 18000);
-        }
+    document.addEventListener("click", iniciarMusica);
+    document.addEventListener("touchstart", iniciarMusica);
 
-        function iniciarSlider() {
-            let index = 0;
-            const slides = document.querySelectorAll('.slide');
+    window.onload = function () {
+        setTimeout(() => {
+            document.getElementById("textos").classList.add("ocultar");
 
             setTimeout(() => {
-                setInterval(() => {
-                    slides[index].classList.remove('active');
-                    index = (index + 1) % slides.length;
-                    slides[index].classList.add('active');
-                }, 4500);
-            }, 3000);
-        }
+                const slider = document.getElementById("slider");
+                slider.classList.add("visible");
+                iniciarSlider();
+            }, 2000);
 
-        function subirVolumen(audio) {
-            let vol = 0;
-            const fade = setInterval(() => {
-                if (vol < 0.35) {
-                    vol += 0.02;
-                    audio.volume = vol;
-                } else {
-                    clearInterval(fade);
-                }
-            }, 300);
-        }
-    </script>
+        }, 18000);
+    }
+
+    function iniciarSlider() {
+        let index = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        setTimeout(() => {
+            setInterval(() => {
+                slides[index].classList.remove('active');
+                index = (index + 1) % slides.length;
+                slides[index].classList.add('active');
+            }, 4500);
+        }, 3000);
+    }
+</script>
+
 
 
 </body>
